@@ -1,0 +1,77 @@
+.product-create-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #0001;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  position: relative;
+}
+
+.product-create-container h2 {
+  color: #2d2d6b;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.product-create-form label {
+  display: block;
+  margin-bottom: 0.7em;
+  color: #2d2d6b;
+  font-weight: 500;
+}
+
+.product-create-form input[type="text"],
+.product-create-form input[type="number"],
+.product-create-form input[type="file"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 0.2em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.btn-main {
+  background: linear-gradient(90deg, #2d2d6b 60%, #e67e22 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-main:disabled {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.btn-main:hover {
+  background: linear-gradient(90deg, #e67e22 60%, #2d2d6b 100%);
+}
+
+.btn-back {
+  background: #e67e22;
+}
+
+.btn-back:hover {
+  background: #2d2d6b;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.95em;
+  margin-top: 0.2em;
+  display: block;
+}
