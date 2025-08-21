@@ -1,1 +1,42 @@
-<p>product-list works!</p>
+<div class="product-list-container">
+  <h2>Lista de productos</h2>
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>#</th> <!-- Nueva columna de numeración -->
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Talla</th>
+        <th>Color</th>
+        <th>Rating</th>
+        <th>Material</th>
+        <th colspan="2">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; let i = index">
+        <td>{{ i + 1 }}</td> <!-- Numeración automática -->
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price | currency}}</td>
+        <td>{{product.availableStock}}</td>
+        <td>{{product.size}}</td>
+        <td>{{product.color}}</td>
+        <td>{{product.rating}}</td>
+        <td>{{product.material}}</td>
+        <td>
+          <button class="btn-action" (click)="editProduct(product.id)">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+        </td>
+        <td>
+          <button class="btn-action btn-delete" (click)="deleteProduct(product.id)">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

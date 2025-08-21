@@ -1,6 +1,6 @@
-<div class="product-create-container">
-  <h2>Crear producto</h2>
-  <form class="product-create-form" (ngSubmit)="onSubmit(productForm)" #productForm="ngForm" novalidate>
+<div class="product-create-container" *ngIf="product">
+  <h2>Editar producto</h2>
+  <form class="product-create-form" (ngSubmit)="onSubmit()" #productForm="ngForm" novalidate>
     <label>
       Nombre:
       <input type="text" name="name" [(ngModel)]="product.name" required #name="ngModel" />
@@ -57,16 +57,12 @@
         El material es obligatorio.
       </span>
     </label>
-    <label>
-      Imagen:
-      <input type="file" (change)="onFileSelected($event)" />
-    </label>
     <div style="display: flex; gap: 1em;">
       <button type="submit" class="btn-main" style="flex:1;">
-        <i class="bi bi-plus-circle"></i> Crear producto
+        <i class="bi bi-pencil-square"></i> Guardar cambios
       </button>
-      <a class="btn-main btn-back" routerLink="/" style="flex:1;">
-        <i class="bi bi-house"></i> Ir al inicio
+      <a class="btn-main btn-back" routerLink="/productos" style="flex:1;">
+        <i class="bi bi-list"></i> Volver a la lista
       </a>
     </div>
   </form>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ProductService } from '../../services/product.service';
@@ -17,8 +17,13 @@ export class ProductCreate {
     name: '',
     description: '',
     price: 0,
+    imageUrl: '',
     availableStock: 0,
-    imageUrl: ''
+    size: '',
+    color: '',
+    rating: 0,
+    material: '',
+    productType: 0 // ShoeStore por defecto
   };
   selectedFile: File | null = null;
 
@@ -34,9 +39,18 @@ export class ProductCreate {
     }
   }
 
-  onSubmit() {
+  onSubmit(productForm: NgForm) {
     // Validación simple
-    if (!this.product.name || !this.product.description || !this.product.price || !this.product.availableStock) {
+    if (
+      !this.product.name ||
+      !this.product.description ||
+      !this.product.price ||
+      !this.product.availableStock ||
+      !this.product.size ||
+      !this.product.color ||
+      !this.product.rating ||
+      !this.product.material
+    ) {
       this.toastr.warning('Por favor, completa todos los campos obligatorios.', 'Formulario incompleto', {
         timeOut: 4000,
         progressBar: true,
@@ -56,8 +70,8 @@ export class ProductCreate {
           progressBar: true,
           positionClass: 'toast-top-right'
         });
-        // Limpia el formulario si quieres
-        this.product = { name: '', description: '', price: 0, availableStock: 0, imageUrl: '' };
+        // Resetea el formulario y deja productType en 0
+        productForm.resetForm({ productType: 0 });
       },
       error: () => {
         this.toastr.error('Ocurrió un error al guardar el producto.', 'Error', {
