@@ -1,18 +1,67 @@
 <div class="admin-container">
-  <header>
-    <h1>Gestión de Zapatería El Caminante</h1>
-    <p>Bienvenido al panel de administración de la fábrica de zapatos.</p>
-  </header>
-  <section>
+  <!-- Banner de bienvenida -->
+  <div class="dashboard-banner">
+    <h1>Bienvenido, Administrador</h1>
+    <p>Panel de control de la Zapatería El Caminante</p>
+  </div>
+
+  <!-- KPIs principales -->
+  <div class="dashboard-kpis">
+    <div class="kpi-card">
+      <i class="bi bi-box-seam"></i>
+      <div>
+        <h2>{{ totalProductos }}</h2>
+        <span>Productos</span>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <i class="bi bi-cart"></i>
+      <div>
+        <h2>{{ totalPedidos }}</h2>
+        <span>Pedidos</span>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <i class="bi bi-people"></i>
+      <div>
+        <h2>{{ totalUsuarios }}</h2>
+        <span>Usuarios</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Acciones rápidas -->
+  <div class="dashboard-actions">
     <button class="create-btn" routerLink="/crear-producto">
       <i class="bi bi-plus"></i> Crear nuevo producto
     </button>
     <button class="view-list-btn" routerLink="/productos">
       <i class="bi bi-list"></i> Ver lista de productos
     </button>
-    <div class="products-placeholder">
-      <h2>Productos recientes</h2>
-      <p>Aquí aparecerán los productos creados.</p>
+  </div>
+
+  <!-- Productos recientes -->
+  <div class="products-banner">
+    <h2><i class="bi bi-stars"></i> Productos recientes</h2>
+    <div class="recent-products-list">
+      <div class="recent-product-card" *ngFor="let prod of productosRecientes">
+        <img [src]="prod.imageUrl" alt="img" />
+        <div>
+          <strong>{{ prod.name }}</strong>
+          <p>{{ prod.description }}</p>
+        </div>
+      </div>
+      <div *ngIf="productosRecientes.length === 0" class="no-products">
+        No hay productos recientes.
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Placeholder para gráficos -->
+  <div class="dashboard-charts">
+    <h2><i class="bi bi-bar-chart"></i> Estadísticas (próximamente)</h2>
+    <div class="chart-placeholder">
+      Aquí podrás ver gráficos de pedidos, ventas y más.
+    </div>
+  </div>
 </div>

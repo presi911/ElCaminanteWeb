@@ -1,12 +1,10 @@
 .admin-container {
-  max-width: 700px;
+  max-width: 1200px;
   margin: 40px auto;
   padding: 32px;
-  background: #f9f9f9;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px #0001;
   font-family: 'Segoe UI', Arial, sans-serif;
 }
+
 header h1 {
   color: #2d2d6b;
   margin-bottom: 0.2em;
@@ -15,16 +13,26 @@ header p {
   color: #555;
   margin-bottom: 1.5em;
 }
-.create-btn {
-  background: linear-gradient(90deg, #2d2d6b 60%, #e67e22 100%);
-  color: #fff;
-  border: none;
+.create-btn,
+.view-list-btn {
+  min-width: 220px;
   padding: 14px 28px;
   border-radius: 8px;
   font-size: 1.1em;
   cursor: pointer;
-  margin-bottom: 2em;
   transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 500;
+}
+.create-btn {
+  background: linear-gradient(90deg, #2d2d6b 60%, #e67e22 100%);
+  color: #fff;
+  border: none;
 }
 .create-btn:hover {
   background: linear-gradient(90deg, #e67e22 60%, #2d2d6b 100%);
@@ -43,17 +51,7 @@ header p {
   background: linear-gradient(90deg, #e67e22 60%, #2d2d6b 100%);
   color: #fff;
   border: none;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-size: 1.1em;
-  cursor: pointer;
-  margin-bottom: 1em;
-  margin-left: 1em;
   transition: background 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  text-decoration: none;
 }
 .view-list-btn:hover {
   background: linear-gradient(90deg, #2d2d6b 60%, #e67e22 100%);
@@ -66,4 +64,119 @@ header p {
   vertical-align: middle;
   /* Opcional: para centrar mejor con el texto */
   display: inline-block;
-} 
+}
+
+.dashboard-banner {
+  background: linear-gradient(90deg, #2d2d6b 60%, #e67e22 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin-bottom: 32px;
+  text-align: center;
+  box-shadow: 0 4px 24px #0001;
+}
+
+.dashboard-kpis {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.kpi-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  min-width: 180px;
+}
+.kpi-card i {
+  font-size: 2.2em;
+  color: #e67e22;
+}
+.kpi-card h2 {
+  margin: 0;
+  color: #2d2d6b;
+  font-size: 2em;
+}
+.kpi-card span {
+  color: #888;
+  font-size: 1em;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.products-banner {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px #0001;
+}
+.products-banner h2 {
+  color: #2d2d6b;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.recent-products-list {
+  display: flex;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+.recent-product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  min-width: 260px;
+  max-width: 320px;
+}
+.recent-product-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px #0002;
+}
+.recent-product-card .date {
+  color: #e67e22;
+  font-size: 0.9em;
+}
+.no-products {
+  color: #888;
+  font-style: italic;
+}
+
+.dashboard-charts {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.dashboard-charts h2 {
+  color: #2d2d6b;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.chart-placeholder {
+  color: #aaa;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 1.2em;
+}

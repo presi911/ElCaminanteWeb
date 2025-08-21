@@ -1,7 +1,7 @@
-<div class="product-create-container" *ngIf="product">
-  <h2>Editar producto</h2>
+<div class="product-create-container">
+  <h2>Crear producto</h2>
   <form class="product-create-form" (ngSubmit)="onSubmit()" #productForm="ngForm" novalidate>
-    <label>
+   <label>
       Nombre:
       <input type="text" name="name" [(ngModel)]="product.name" required #name="ngModel" />
       <span class="error" *ngIf="name.invalid && (name.dirty || name.touched)">
@@ -57,6 +57,14 @@
         El material es obligatorio.
       </span>
     </label>
+    <label>
+      Imagen:
+      <input type="file" accept="image/*" (change)="onFileSelected($event)" />
+    </label>
+    <div class="image-preview" *ngIf="imagePreview || product.imageUrl">
+      <img [src]="imagePreview ? imagePreview : product.imageUrl" alt="Preview imagen" />
+    </div>
+
     <div style="display: flex; gap: 1em;">
       <button type="submit" class="btn-main" style="flex:1;">
         <i class="bi bi-pencil-square"></i> Guardar cambios

@@ -59,8 +59,11 @@
     </label>
     <label>
       Imagen:
-      <input type="file" (change)="onFileSelected($event)" />
+      <input type="file" accept="image/*" (change)="onFileSelected($event)" />
     </label>
+    <div class="image-preview" *ngIf="imagePreview">
+      <img [src]="imagePreview" alt="Preview imagen" />
+    </div>
     <div style="display: flex; gap: 1em;">
       <button type="submit" class="btn-main" style="flex:1;">
         <i class="bi bi-plus-circle"></i> Crear producto
